@@ -9,9 +9,16 @@ import SwiftUI
 
 @main
 struct CoinSpectraApp: App {
+    
+    @StateObject private var viewModel: HomeViewModel = HomeViewModel()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            NavigationView {
+                HomeView()
+                    .toolbar(.hidden, for: .navigationBar)
+                    .environmentObject(viewModel)
+            }
         }
     }
 }
