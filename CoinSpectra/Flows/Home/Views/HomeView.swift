@@ -22,6 +22,8 @@ struct HomeView: View {
             VStack {
                 headerView
                 
+                SearchBarView(searchText: $viewModel.searchText)
+                
                 columnTitles
                 
                 if !showPorfolio {
